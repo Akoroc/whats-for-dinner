@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import DrinkCard from "./components/DrinkCard";
 // import MealCard from "./components/MealCard";
-// import ShoppingList from "./components/ShoppingList";
 
 import "./style/main.scss";
 import axios from "axios";
