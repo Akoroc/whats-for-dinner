@@ -38,7 +38,11 @@ class App extends Component {
         };
         function clean(obj) {
           for (var propName in obj) {
-            if (obj[propName] === null || obj[propName] === undefined) {
+            if (
+              obj[propName] === null ||
+              obj[propName] === undefined ||
+              obj[propName] === ""
+            ) {
               delete obj[propName];
             }
           }
@@ -46,9 +50,10 @@ class App extends Component {
         }
         filterObject(mealObj, ingKeys);
         clean(mealObj);
-        this.setState({
-          mealShoppingList: mealObj,
-        });
+        console.log(mealObj);
+        // this.setState({
+        //   mealShoppingList: mealObj,
+        // });
       })
       .catch((error) => console.log(error));
   };
@@ -72,7 +77,11 @@ class App extends Component {
         };
         function clean(obj) {
           for (var propName in obj) {
-            if (obj[propName] === null || obj[propName] === undefined) {
+            if (
+              obj[propName] === null ||
+              obj[propName] === undefined ||
+              obj[propName] === ""
+            ) {
               delete obj[propName];
             }
           }
