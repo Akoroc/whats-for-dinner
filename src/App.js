@@ -56,13 +56,13 @@ class App extends Component {
           <button onClick={this.updateButton}>Give me Some Grub</button>
         </div>
         <div className="screen-divider">
-          <MealCard mealInfo={this.state.mealDetails} />
+          {/* <MealCard mealInfo={this.state.mealDetails} /> */}
         </div>
-      </div>  
+      </div>
     );
   }
 }
 
 export default App;
 
-      //    <DrinkCard mealInfo={this.state.mealDetails} />
+//    <DrinkCard mealInfo={this.state.mealDetails} />
