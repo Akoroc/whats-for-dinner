@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import DrinkCard from "./components/DrinkCard";
-import MealCard from "./components/MealCard/MealCard";
+import DrinkCard from "./components/DrinkCard";
+import MealCard from "./components/MealCard";
 
 import "./style/main.scss";
 import axios from "axios";
@@ -53,10 +53,11 @@ class App extends Component {
       <div>
         <div className="flexed">
           <h1>Are you Hungry?</h1>
-          <button onClick={this.updateButton}>Give me Some Grub</button>
+          <button className="button" onClick={this.updateButton}>Give me Some Grub</button>
         </div>
         <div className="screen-divider">
           <MealCard mealInfo={this.state.mealDetails} />
+          <DrinkCard drinkInfo={this.state.drinkDetails} />
         </div>
       </div>  
     );
@@ -64,5 +65,3 @@ class App extends Component {
 }
 
 export default App;
-
-      //    <DrinkCard mealInfo={this.state.mealDetails} />
