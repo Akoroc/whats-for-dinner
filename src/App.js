@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import DrinkCard from "./components/DrinkCard";
+import DrinkCard from "./components/DrinkCard/DrinkCard";
 import MealCard from "./components/MealCard/MealCard";
 
 import "./style/main.scss";
@@ -57,6 +57,7 @@ class App extends Component {
         </div>
         <div className="screen-divider">
           <MealCard mealInfo={this.state.mealDetails} />
+          <DrinkCard drinkInfo={this.state.drinkDetails}/>
         </div>
       </div>  
     );
