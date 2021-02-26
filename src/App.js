@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+// import Header from "./components/Header";
+// import DrinkCard from "./components/DrinkCard";
+// import MealCard from "./components/MealCard";
+// import ShoppingList from "./components/ShoppingList";
+
 import axios from "axios";
 
 // Api Info
@@ -51,9 +56,9 @@ class App extends Component {
         filterObject(mealObj, ingKeys);
         clean(mealObj);
         console.log(mealObj);
-        // this.setState({
-        //   mealShoppingList: mealObj,
-        // });
+        this.setState({
+          mealShoppingList: mealObj,
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -96,13 +101,6 @@ class App extends Component {
       .catch((error) => console.log(error));
   };
 
-  objFilter = (obj) => {
-    // Object.keys(obj);
-    // for(const property in obj) {
-    //   const regex = /strIngredient/
-    //   if
-    // }
-  };
   render() {
     return (
       <div>
@@ -111,8 +109,10 @@ class App extends Component {
         <div className="screen-divider">
           <DrinkCard mealInfo={this.state.mealDetails} />
           <MealCard drinkInfo={this.state.drinkDetails} />
-          <ShoppingList shoppingList={this.state.shoppingList} />
-          
+          <ShoppingList
+            drinkShoppingList={this.state.drinkShoppingList}
+            mealShoppingList={this.state.mealShoppingList}
+          />
         </div> */}
       </div>
     );
