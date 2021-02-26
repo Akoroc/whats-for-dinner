@@ -5,7 +5,7 @@ function DrinkCard(props) {
 
   return (
     <section className="card">
-      <h2 className="card__heading">Meal</h2>
+      <h2 className="card__heading">Drink</h2>
       <img
         className="card__img"
         alt="drink"
