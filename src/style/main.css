@@ -5,12 +5,13 @@
 }
 
 .card__img {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
 body {
   background-color: lightpink;
+  font-size: 16px;
 }
 
 body {
@@ -33,4 +34,9 @@ body {
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+}
+
+.screen-divider {
+  display: flex;
+  flex-direction: row;
 }

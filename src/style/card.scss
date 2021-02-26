@@ -1,10 +1,12 @@
 .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
 
-	&__img {
-		width: 100%;
-		height: auto;
-	}
+  &__img {
+    width: 200px;
+  }
+  .card_paragraph {
+    max-width: 500px;
+  }
 }
