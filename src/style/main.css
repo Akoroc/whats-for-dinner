@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: lightpink;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+.button {
+  position: relative;
+  background-color: lightseagreen;
+  border: none;
+  border-radius: 10px;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}

@@ -53,15 +53,19 @@ class App extends Component {
       <div>
         <div className="flexed">
           <h1>Are you Hungry?</h1>
-          <button className="button" onClick={this.updateButton}>Give me Some Grub</button>
+          <button className="button" onClick={this.updateButton}>
+            Give me Some Grub
+          </button>
         </div>
         <div className="screen-divider">
           <MealCard mealInfo={this.state.mealDetails} />
           <DrinkCard drinkInfo={this.state.drinkDetails} />
         </div>
-      </div>  
+      </div>
     );
   }
 }
 
 export default App;
+
+//    <DrinkCard mealInfo={this.state.mealDetails} />
