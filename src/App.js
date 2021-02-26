@@ -67,5 +67,3 @@ class App extends Component {
 }
 
 export default App;
-
-//    <DrinkCard mealInfo={this.state.mealDetails} />
