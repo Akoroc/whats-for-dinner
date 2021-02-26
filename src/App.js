@@ -9,13 +9,13 @@ class App extends Component {
   state = {
     mealDetails: {},
     drinkDetails: {},
-    shoppingList: [],
+    drinkShoppingList: {},
+    mealShoppingList: {},
   };
 
   componentDidMount() {
     this.getMealDetails();
     this.getDrinkDetails();
-    this.getShoppingList();
   }
 
   getMealDetails = () => {
@@ -24,6 +24,30 @@ class App extends Component {
       .then((response) => {
         this.setState({
           mealDetails: response.data.meals[0],
+        });
+        let mealObj = response.data.meals[0];
+        const ingKeys = Object.keys(mealObj).filter((object) => {
+          return object.includes("strIngredient");
+        });
+        const filterObject = (obj, arr) => {
+          Object.keys(obj).forEach((key) => {
+            if (!arr.includes(key)) {
+              delete obj[key];
+            }
+          });
+        };
+        function clean(obj) {
+          for (var propName in obj) {
+            if (obj[propName] === null || obj[propName] === undefined) {
+              delete obj[propName];
+            }
+          }
+          return obj;
+        }
+        filterObject(mealObj, ingKeys);
+        clean(mealObj);
+        this.setState({
+          mealShoppingList: mealObj,
         });
       })
       .catch((error) => console.log(error));
@@ -35,17 +59,32 @@ class App extends Component {
         this.setState({
           drinkDetails: response.data.drinks[0],
         });
-        console.log(
-          Object.keys(response.data.drinks[0]).filter((object) => {
-            return object.includes("strIngredient");
-          })
-        );
+        let drinkObj = response.data.drinks[0];
+        const ingKeys = Object.keys(drinkObj).filter((object) => {
+          return object.includes("strIngredient");
+        });
+        const filterObject = (obj, arr) => {
+          Object.keys(obj).forEach((key) => {
+            if (!arr.includes(key)) {
+              delete obj[key];
+            }
+          });
+        };
+        function clean(obj) {
+          for (var propName in obj) {
+            if (obj[propName] === null || obj[propName] === undefined) {
+              delete obj[propName];
+            }
+          }
+          return obj;
+        }
+        filterObject(drinkObj, ingKeys);
+        clean(drinkObj);
+        this.setState({
+          drinkShoppingList: drinkObj,
+        });
       })
       .catch((error) => console.log(error));
-  };
-
-  getShoppingList = () => {
-    this.objFilter();
   };
 
   objFilter = (obj) => {
